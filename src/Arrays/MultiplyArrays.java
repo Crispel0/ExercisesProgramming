@@ -13,6 +13,7 @@ de la posicion 0 del array 1 con el del array 2 y asi sucesivamente al final mue
 llama al final el recolector de basura
 */
 public class MultiplyArrays {
+	
 	public static void main(String[] args) {
 		System.out.println("Type a value");
 		Scanner scan1 = new Scanner(System.in);
@@ -20,32 +21,45 @@ public class MultiplyArrays {
 		int [] arr1 = new int [positionArr];
 		int [] arr2 = new int [positionArr];
 		
+	
+		arr1 = arr2;
 		
-		for (int i = 0 ;i < arr1.length; i++) {
-			int numbersAleotory =(int) Math.floor(Math.random() * positionArr);
-			arr1 [i] = numbersAleotory;
-		}
-				arr1 = arr2;
-				
-				multiplyOfArrays(arr1 ,arr2);
+		int [] arr3 = new int [arr1.length];
+		fillValuesRandom(arr1, 10, 100);
+		arr3 = multiplyOfArrays(arr1 ,arr2);
 
+		System.out.println(arr1);
+		mostrar(arr1);
+		System.out.println(arr2);
+		mostrar(arr2);
+		System.out.println(arr3);
+		mostrar(arr3);
+		
+		System.gc(); /*llamaRecolectorBasura*/
 	}
-	/*despues crea un metodo que tenga como parametros los dos arrays y devuelva uno con la multiplicacion 
-	de la posicion 0 del array 1 con el del array 2 y asi sucesivamente al final muestra el contenido de cada array
-	*/
+	
+	public static void mostrar (int [] nums) {
+		for(int i = 0 ; i < nums.length; i++) {
+			System.out.println("the index is " + i +  " and the value is " + nums[i]);
+		}
+	}
+	
+	public static void fillValuesRandom (int [] arr1 ,int num1 , int num2) {
+		for (int i = 0 ;i < arr1.length; i++) {
+			int numbersAleotory =(int) Math.floor(Math.random() * (num1-num2) + num2);
+			arr1[i] = numbersAleotory;
+		}
+	}
+	
 	protected static int []multiplyOfArrays(int [] arr1, int []arr2){
-		int [] multiplyArrays = new int [arr1.length + arr2.length];
+		int [] multiplyArrays = new int [arr1.length];
 		int i;
 		
+		
 		for(i = 0; i < arr1.length ;i++) {
-			for(int j = 0 ; j < arr2.length ;j++) {
-				multiplyArrays[i + j] = arr1[i] * arr2[j];
-
-			}
+				multiplyArrays[i] = arr1[i] * arr2[i];
 
 		}
-		System.out.println(" the values of the first array is " +  arr1[i] + " and the values of second arrays is " + arr2[j]);
-
 		
 		return multiplyArrays;
 			
