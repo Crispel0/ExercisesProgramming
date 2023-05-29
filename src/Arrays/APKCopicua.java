@@ -28,7 +28,7 @@ public class APKCopicua {
 		int [] arrConverted = new int [length];
 		
 		for(int i = 0; i < arrConverted.length; i++) {
-			arrConverted[i] = Character.getNumericValue(Digit.charAt(i)); /*convierte a array de int el String (en valores numericos)*/
+			arrConverted[i] = Character.getNumericValue(Digit.charAt(i)); /*convert a value numeric to a value not numeric with the method getNumericValue*/
 		}
 		
 		return arrConverted;
