@@ -1,5 +1,6 @@
 package ExerciseBookJava;
 
+import java.util.Arrays;
 
 public class OperaTabla {
 	
@@ -15,16 +16,17 @@ public class OperaTabla {
 		numTabla1 = new int [elemNum];
 		numTabla2 = new int [elemNum];
 		
-		System.out.println(operatabla(numTabla1, numTabla2, elemNum, 's'));
-		
+		int [] resultado = operatabla(numTabla1, numTabla2, elemNum, "s");
+		System.out.println(Arrays.toString(resultado));
 	}
 	
-	public static int [] operatabla (int [] numTabla1, int [] numTabla2, int elemNum , char operacion) {
+	public static int [] operatabla (int [] numTabla1, int [] numTabla2, int elemNum , String operacion) {
 		
 		int [] resultado = new int [elemNum];
 	
-
-		switch(operacion) {
+		char operation = operacion.charAt(0);
+		
+		switch(operation) {
 		case 's': 
 			for(int i = 0; i < elemNum ; i++) {
 				resultado[i] = numTabla1[i] + numTabla2[i];
