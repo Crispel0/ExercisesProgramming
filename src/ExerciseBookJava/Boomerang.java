@@ -13,7 +13,7 @@ public class Boomerang {
 	
 	public static void main(String[] args) {
 		int [] boomerang =  {
-			4,5,4,2,3,2,7,5,7,6,4,5,1,2,1
+			4,5,4,2
 		};
 		
 		System.out.println(cantidadBoomerang(boomerang));
