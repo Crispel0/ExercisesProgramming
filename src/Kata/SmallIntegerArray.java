@@ -1,5 +1,7 @@
 package Kata;
 
+import java.util.Arrays;
+
 public class SmallIntegerArray {
 
 	public static int findSmallIntegerArray(int [] args) {
@@ -10,10 +12,18 @@ public class SmallIntegerArray {
 			}
 		return smallInteger;
 		}
+	
+	public static int otherFormFindTheSmallInteger(int[]args){
+		Arrays.sort(args);
+		return args[0];
+	}
 		
 	public static void main(String[] args) {
 		int [] numbers = {10,15,20,50,301};
 		 int numberSmall = findSmallIntegerArray(numbers);
 		System.out.println(numberSmall);
+		
+		int moreFormsFindNumberSmall = otherFormFindTheSmallInteger(numbers);
+		System.out.println(moreFormsFindNumberSmall);
 	}
 }
